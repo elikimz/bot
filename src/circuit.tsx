@@ -34,7 +34,7 @@ const circuit = () => {
   <div className="absolute top-1 right-4 ">
           <button
             onClick={colorTaggle}
-            className="px-4 py-2  bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 transition"
+            className="px-4 py-2  bg-gray-600 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 transition"
           >
             Change Color Mode
           </button>
