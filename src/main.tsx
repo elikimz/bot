@@ -7,10 +7,11 @@ import './index.css'
 // import Cleanup from './cleanup'
 // import Fetchdata from './fetchdata'
 // import Rendering  from './Rendering'
-import Circuit from './circuit'
+// import Circuit from './circuit'
+import Form from './form'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <Circuit/>
+   <Form/>
   </StrictMode>
 )
