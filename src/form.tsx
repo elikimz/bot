@@ -64,7 +64,7 @@ if(FirstName&&Email&&Age){
       const {FirstName,Email,Age}=person
       return(
         <>
-        <div className='bg-emerald-200 flex flex-col mx-auto max-w-lg px-3 text-black border-double border-4 border-sky-600'>
+        <div className='bg-emerald-100 flex flex-col mx-auto max-w-lg px-3 text-black border-double border-4 border-sky-600'>
          <h4>Name:{FirstName}</h4>
          <p>Email:{Email}</p>
          <p>Age:{Age}</p>
