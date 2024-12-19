@@ -32,7 +32,7 @@ console.log(value)
     <p className="text-3xl font-bold text-gray-800">{value}</p>
     
     
-    <button  className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105" onClick={setCounters}>decrease</button>
+    <button  className="bg-blue-400 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105" onClick={setCounters}>decrease</button>
     <button  className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105" onClick={setSet}>reset</button>
     <button  className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105" onClick={setCounter}>Increase</button>
     <button  className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:bg-blue-600 hover:scale-105" onClick={increaseNow}>Increase Timer</button>
