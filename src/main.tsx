@@ -5,13 +5,13 @@ import './index.css'
 
 // import Effect from './Effect'
 // import Cleanup from './cleanup'
- import Fetchdata from './fetchdata'
+ //import Fetchdata from './fetchdata'
 // import Rendering  from './Rendering'
 // import Circuit from './circuit'
-//import Form from './form'
+import Form from './form'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <Fetchdata/>
+   <Form/>
   </StrictMode>
 )
