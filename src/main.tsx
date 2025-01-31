@@ -8,10 +8,10 @@ import './index.css'
  //import Fetchdata from './fetchdata'
 // import Rendering  from './Rendering'
 // import Circuit from './circuit'
-import Form from './form'
+import SalesBarChar from './form'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <Form/>
+   <SalesBarChar/>
   </StrictMode>
 )
