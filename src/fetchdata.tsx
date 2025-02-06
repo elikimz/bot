@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 const Fetchdata = () => {
 
   const [users,setUsers]=useState([]);
+  
   const getUsers=async()=>{
     const response=await fetch(url);
     const users=await response.json();
