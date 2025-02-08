@@ -7,12 +7,13 @@ import './index.css'
 // import Cleanup from './cleanup'
  //import Fetchdata from './fetchdata'
  //import Rendering  from './Rendering'
-import Circuit from './circuit'
-//import Form from './form'
+//import Circuit from './circuit'
+import Form from './form'
 //import UseEffectCleanup from './UseEffectCleanup'
+ //import ShowAndHide from './ShowAndHide'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <Circuit/>
+   <Form/>
   </StrictMode>
 )
