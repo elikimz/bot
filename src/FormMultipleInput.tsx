@@ -1,34 +1,28 @@
 import { useState } from "react";
 
 const Form = () => {
-  const [firstName,setFirstName]=useState('');
-  const[email,setEmail]=useState('');
-  const[people,setPeople]=useState([])
-  const[age,setAge]=useState()
+  // const [firstName,setFirstName]=useState('');
+  // const[email,setEmail]=useState('');
+  // const[age,setAge]=useState('');
+  const[people,setPeople]=useState([]);
+ 
+  const [person,setPerson]=useState({firstName:'',email:'',age:''});
+
+ const handleChange=(e)=>{
+  const name=e.target.name;
+  const value=e.target.value;
+   setPerson({...person,[name]:value});
 
 
-const handleSubmit=(e)=>{
-     e.preventDefault();
-   if(firstName&&email){
-    const person={id: new Date().getTime().toString(),firstName,email,age}
-    setPeople((people)=>{
-      return [...people,person]
-    });
-     setFirstName('')
-      setEmail('')
-      setAge('')
-     
+ }
 
-  console.log(person)
-}
-   else {
-   console.log('empty value');
-}
-
-
-};
-
-
+ const handleSubmit=(e)=>{
+    e.preventDefault();
+    const newPerson={...person,id:new Date().getTime().toString}
+    setPeople([...people,newPerson]);
+    setPerson({firstName:'',email:'',age:''})
+    
+ }
 
 
   return (
@@ -41,12 +35,12 @@ const handleSubmit=(e)=>{
         </label>
         <input
           type="text"
-          id="firstname"
-          name="firstname"
+          id="firstName"
+          name="firstName"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           placeholder="Enter your name"
-          value={firstName}
-          onChange={(e)=>setFirstName(e.target.value)}
+          value={person.firstName}
+          onChange={handleChange}
         />
          <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
           Email:
@@ -57,8 +51,8 @@ const handleSubmit=(e)=>{
           name="email"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           placeholder="Enter your email"
-          value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          value={person.email}
+          onChange={handleChange}
         />
         <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
           Age:
@@ -69,8 +63,8 @@ const handleSubmit=(e)=>{
           name="age"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           placeholder="Enter your Age"
-          value={age}
-          onChange={(e)=>setAge(e.target.value)}
+          value={person.age}
+          onChange={handleChange}
         />
       </div>
       <button onClick={handleSubmit}

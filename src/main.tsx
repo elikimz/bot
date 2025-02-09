@@ -11,9 +11,10 @@ import './index.css'
 //import Form from './form'
 //import UseEffectCleanup from './UseEffectCleanup'
  //import ShowAndHide from './ShowAndHide'
-import Form from './FormMultipleInput'
+//import Form from './FormMultipleInput'
+import UseRef from './UseRef'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <Form/>
+   <UseRef/>
   </StrictMode>
 )
