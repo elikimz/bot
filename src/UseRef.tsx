@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 const UseRef = () => {
     const refContainer=useRef(null)
@@ -9,7 +9,7 @@ const UseRef = () => {
 
 
 
-    
+
     
     console.log(refContainer)
     
