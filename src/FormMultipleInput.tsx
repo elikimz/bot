@@ -1,63 +1,106 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
-const FormMultipleInput = () => {
-    const [person,setPerson]=useState({FirstName:''Email:''})
+const Form = () => {
+  const [firstName,setFirstName]=useState('');
+  const[email,setEmail]=useState('');
+  const[people,setPeople]=useState([])
+  const[age,setAge]=useState()
 
- 
+
 const handleSubmit=(e)=>{
-e.preventDefault();
-if(FirstName&&Email){
-  const person={FirstName,Email}
-  setPeople((people)=>{
-    return(
-      [...people, person]
-    )
-  });
-  setFirstName('')
-  setEmail('')
+     e.preventDefault();
+   if(firstName&&email){
+    const person={id: new Date().getTime().toString(),firstName,email,age}
+    setPeople((people)=>{
+      return [...people,person]
+    });
+     setFirstName('')
+      setEmail('')
+      setAge('')
+     
+
   console.log(person)
 }
-  else{
-    alert('Please enter First Name and Email')
-    return;
-  }
+   else {
+   console.log('empty value');
 }
+
+
+};
+
+
+
 
   return (
     <>
-   <form className='bg-green-400 px-10 py-10  mt-10 max-w-lg mx-auto 'onSubmit={handleSubmit}>
-    <div className=' flex flex-col ml-10  '>
-      <label htmlFor='FirstName'>Name:</label>
-      <input type='FirstName' id='FirstName' name='FirstName' value={FirstName}onChange={(e)=>setFirstName(e.target.value)}/>
-      <label htmlFor='email'>Email:</label>
-      <input type='text' id='email' name='email'value={Email}onChange={(e)=>setEmail(e.target.value)} />
-    </div>
-    <div className=' bg-white rounded-md mt-5 ml-10 w-max px-3 hover:bg-sky-700'>
-    <button type='submit'>Add Person</button>
-    </div>
+    <div className="max-w-md mx-auto mt-10 p-6 bg-gray-50 rounded-lg shadow-md">
+    <form className="space-y-4">
+      <div className="flex flex-col space-y-2">
+        <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+          Name:
+        </label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          placeholder="Enter your name"
+          value={firstName}
+          onChange={(e)=>setFirstName(e.target.value)}
+        />
+         <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+          Email:
+        </label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+        />
+        <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+          Age:
+        </label>
+        <input
+          type="text"
+          id="age"
+          name="age"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          placeholder="Enter your Age"
+          value={age}
+          onChange={(e)=>setAge(e.target.value)}
+        />
+      </div>
+      <button onClick={handleSubmit}
+        type="submit" 
+        className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+      >
+        Submit
+      </button>
+      
     </form>
-     {people.map((person)=>{
-      const {FirstName,Email}=person
-      return(
-        <>
-        <div className='bg-emerald-100 flex flex-col mx-auto max-w-lg px-3 text-black border-double border-4 border-sky-600'>
-         <h4>Name:{FirstName}</h4>
-         <p>Email:{Email}</p>
-       
-        <div className='flex justify-end '>
-        <button  className='bg-green-500 rounded-md w-max px-3 hover:bg-sky-700 flex items-end -mt-8 mb-2'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-</svg>
-</button>
-        </div>
-        </div>
-        </>
-      )
+    <div className="space-y-4 p-4 bg-gray-100 rounded-lg shadow-md">
+  {people.map((person) => {
+    const { id, firstName, email,age } = person;
 
-   })}
-   </> 
- 
+    return (
+      <div key={id} className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 className="text-lg font-semibold text-gray-900">{firstName}</h4>
+        <p className="text-sm text-gray-600">{email}</p>
+        <p>{age}</p>
+      </div>
+    );
+  })}
+</div>
+      
+  </div>
+
+  
+  </>
   )
+ 
 }
 
-export default FormMultipleInput
+export default Form

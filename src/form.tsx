@@ -1,16 +1,36 @@
+import { useState } from "react";
 
-const form = () => {
+const Form = () => {
+  const [firstName,setFirstName]=useState('');
+  const[email,setEmail]=useState('');
+  const[people,setPeople]=useState([])
+
 
 const handleSubmit=(e)=>{
-  e.preventDefault();
-console.log("hello world")
+     e.preventDefault();
+   if(firstName&&email){
+    const person={id: new Date().getTime().toString(),firstName,email}
+    setPeople((people)=>{
+      return [...people,person]
+    });
+     setFirstName('')
+      setEmail('')
+     
 
+  console.log(person)
 }
+   else {
+   console.log('empty value');
+}
+
+
+};
 
 
 
 
   return (
+    <>
     <div className="max-w-md mx-auto mt-10 p-6 bg-gray-50 rounded-lg shadow-md">
     <form className="space-y-4">
       <div className="flex flex-col space-y-2">
@@ -23,6 +43,8 @@ console.log("hello world")
           name="firstname"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           placeholder="Enter your name"
+          value={firstName}
+          onChange={(e)=>setFirstName(e.target.value)}
         />
          <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
           Email:
@@ -33,18 +55,37 @@ console.log("hello world")
           name="firstname"
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           placeholder="Enter your email"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
         />
       </div>
-      <button
-        type="submit"
+      <button onClick={handleSubmit}
+        type="submit" 
         className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
       >
         Submit
       </button>
+      
     </form>
+    <div className="space-y-4 p-4 bg-gray-100 rounded-lg shadow-md">
+  {people.map((person) => {
+    const { id, firstName, email } = person;
+
+    return (
+      <div key={id} className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+        <h4 className="text-lg font-semibold text-gray-900">{firstName}</h4>
+        <p className="text-sm text-gray-600">{email}</p>
+      </div>
+    );
+  })}
+</div>
+      
   </div>
 
+  
+  </>
   )
+ 
 }
 
-export default form
+export default Form
