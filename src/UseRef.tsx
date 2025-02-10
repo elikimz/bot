@@ -3,12 +3,12 @@ import  { useRef } from 'react'
 const UseRef = () => {
     const refContainer=useRef(null)
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=(e: { preventDefault: () => void; })=>{
         e.preventDefault();
     };
 
 
-
+   
     
     
     console.log(refContainer)
@@ -27,7 +27,7 @@ const UseRef = () => {
           type="button"
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
         >
-          Submit
+          📲 Submit  🎍
         </button>
       </div>
     </form>
