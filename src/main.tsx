@@ -12,9 +12,10 @@ import './index.css'
 //import UseEffectCleanup from './UseEffectCleanup'
  //import ShowAndHide from './ShowAndHide'
 //import Form from './FormMultipleInput'
-import UseRef from './UseRef'
+//import UseRef from './UseRef'
+import UseReducer from './Reducer/UseReducer'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <UseRef/>
+   <UseReducer/>
   </StrictMode>
 )
