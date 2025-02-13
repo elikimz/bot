@@ -1,11 +1,11 @@
 
 
-const Modal = () => {
-  return (
-    <div>
-     modalContent
-    </div>
-  )
-}
+// const Modal = () => {
+//   return (
+//     <div>
+//      modalContent
+//     </div>
+//   )
+// }
 
-export default Modal
+// export default Modal

@@ -13,9 +13,10 @@ import './index.css'
  //import ShowAndHide from './ShowAndHide'
 //import Form from './FormMultipleInput'
 //import UseRef from './UseRef'
-import UseReducer from './Reducer/UseReducer'
+//import UseReducer from './Reducer/UseReducer'
+import ValentineLoveLinks from './valentine'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <UseReducer/>
+   <ValentineLoveLinks/>
   </StrictMode>
 )

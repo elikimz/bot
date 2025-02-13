@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
-const UseEffectCleanup = () => {
-  const[size,SetSize]=useState(window.innerWidth)
-  const checksize=()=>{
-    SetSize(window.innerWidth)
-  }
+// const UseEffectCleanup = () => {
+//   const[size,SetSize]=useState(window.innerWidth)
+//   const checksize=()=>{
+//     SetSize(window.innerWidth)
+//   }
 
-  useEffect(()=>{
-    window.addEventListener('resize',checksize)
-    return (()=>{
-      window.removeEventListener('resize',checksize)
-    }
-    )
-  })
-  console.log(size)
-  return (
+//   useEffect(()=>{
+//     window.addEventListener('resize',checksize)
+//     return (()=>{
+//       window.removeEventListener('resize',checksize)
+//     }
+//     )
+//   })
+//   console.log(size)
+//   return (
    
-    <div>
-      <h2>{size} PX</h2>
-    </div>
-  )
-}
+//     <div>
+//       <h2>{size} PX</h2>
+//     </div>
+//   )
+// }
 
-export default UseEffectCleanup
+// export default UseEffectCleanup
