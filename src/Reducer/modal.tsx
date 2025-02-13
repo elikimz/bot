@@ -3,7 +3,7 @@
 const Modal = () => {
   return (
     <div>
-      i am modal
+     modalContent
     </div>
   )
 }
