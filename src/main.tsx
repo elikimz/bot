@@ -14,9 +14,10 @@ import './index.css'
 //import Form from './FormMultipleInput'
 //import UseRef from './UseRef'
 //import UseReducer from './Reducer/UseReducer'
-import ValentineLoveLinks from './valentine'
+//import ValentineLoveLinks from './valentine'
+import CheckoutButton from './stripe'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-   <ValentineLoveLinks/>
+   <CheckoutButton/>
   </StrictMode>
 )
